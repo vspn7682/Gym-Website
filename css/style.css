@@ -106,7 +106,8 @@ ul {
   padding: 0 1rem;
 }
 
-.nav-box .nav a {
+.nav-box .nav a,
+.mobNav a {
   display: inline-block;
   position: relative;
   margin: 0 0.5rem;
@@ -133,6 +134,35 @@ ul {
   width: 100%;
 }
 
+.mobNav {
+  position: absolute;
+  width: 100%;
+  display: block;
+  background: #ffde01;
+  text-align: center;
+  z-index: 10;
+  padding: 3rem 0 1rem 0;
+  transform: translateY(-1000px);
+  transition: all 0.5s;
+}
+
+.mobNav.visible {
+  transform: translateY(0);
+}
+
+.mobNav a {
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s;
+}
+
+.mobNav a:hover {
+  border-bottom: 2px solid rgb(86, 4, 251);
+}
+
+.mobNav li {
+  padding: 0.5rem 0;
+}
+
 .hamburger i {
   font-size: 1rem;
   color: rgb(86, 4, 251);
@@ -147,6 +177,7 @@ ul {
   transform: translate(-50%, -50%);
   width: 100%;
   text-align: center;
+  z-index: 1;
 }
 
 .hero p {
@@ -755,6 +786,7 @@ form input::placeholder {
   font-style: italic;
   letter-spacing: 1px;
   cursor: pointer;
+  line-height: 1px;
   transition: all 0.2s;
 }
 
@@ -849,6 +881,10 @@ form input::placeholder {
 }
 
 @media screen and (max-width: 700px) {
+  .navbar {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  }
+
   .nav-box {
     display: flex;
   }
@@ -858,6 +894,10 @@ form input::placeholder {
   }
 
   .hamburger i {
+    display: block;
+  }
+
+  .mobNav {
     display: block;
   }
 
