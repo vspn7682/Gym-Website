@@ -137,7 +137,7 @@ ul {
 .mobNav {
   position: absolute;
   width: 100%;
-  display: block;
+  display: none;
   background: #ffde01;
   text-align: center;
   z-index: 10;
