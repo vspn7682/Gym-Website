@@ -60,17 +60,26 @@ ul {
   position: relative;
   width: 100%;
   height: 100vh;
+  /* clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%); */
+}
+
+.showcase.about_showcase {
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)),
+    url("../img/about_showcase.png") no-repeat;
+  background-size: cover;
+  background-position: top 105%;
+  background-attachment: fixed;
 }
 
 .showcase::after {
   content: "";
   position: absolute;
-  bottom: -60px;
+  bottom: 0;
   left: 0;
   width: 100%;
   height: 100px;
   background: rgb(86, 4, 251);
-  transform: skewY(-2deg);
+  clip-path: polygon(0 80%, 100% 40%, 100% 100%, 0 100%);
 }
 
 .navbar {
@@ -103,7 +112,7 @@ ul {
 }
 
 .nav-box .nav li {
-  padding: 0 1rem;
+  padding: 0 0.5rem;
 }
 
 .nav-box .nav a,
@@ -111,6 +120,7 @@ ul {
   display: inline-block;
   position: relative;
   margin: 0 0.5rem;
+  padding: 0.2rem 1rem;
   font-size: 0.9rem;
   color: rgb(86, 4, 251);
   font-weight: 900;
@@ -132,6 +142,10 @@ ul {
 
 .nav-box .nav a:hover::after {
   width: 100%;
+}
+
+.active {
+  border: 2px solid rgb(86, 4, 251);
 }
 
 .mobNav {
@@ -180,6 +194,10 @@ ul {
   z-index: 1;
 }
 
+.about_showcase .hero {
+  top: 45%;
+}
+
 .hero p {
   font-size: 1.5rem;
   font-style: italic;
@@ -200,19 +218,31 @@ ul {
   background: rgb(86, 4, 251);
   padding: 5rem 0 7rem 0;
   position: relative;
+  /* clip-path: polygon(0 20%, 100% 0, 100% 70%, 0 90%); */
 }
 
-.info::after {
+/* .info::after {
   content: "";
   position: absolute;
-  bottom: -5px;
+  bottom: 0;
   left: 0;
   width: 100%;
-  height: 20px;
+  height: 100px;
+  background: #f00;
+  clip-path: polygon(0 0, 100% 0, 100% 51%, 0 100%);
+}
+
+.info:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
   z-index: 1;
   background: #ffde01;
-  transform: skewY(-2deg);
-}
+  /* clip-path: polygon(0 80%, 100% 40%, 100% 100%, 0 100%); 
+} */
 
 .info-box {
   display: grid;
@@ -244,6 +274,18 @@ ul {
   background: #1b252f;
   position: relative;
   padding: 10rem 0 5rem 0;
+}
+
+.classes::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: rgb(86, 4, 251);
+  clip-path: polygon(0 0, 100% 0, 100% 20%, 0 60%);
+  /* clip-path: polygon(0 80%, 100% 40%, 100% 100%, 0 100%); */
 }
 
 .head-box {
@@ -291,17 +333,6 @@ ul {
   background: #ffde01;
 }
 
-.classes::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 20px;
-  background: #1b252f;
-  transform: skewY(-2deg);
-}
-
 .class-box {
   margin-top: 5rem;
   display: grid;
@@ -346,34 +377,11 @@ ul {
   text-align: center;
 }
 
-.classes::after {
-  content: "";
-  position: absolute;
-  bottom: 20px;
-  left: 0;
-  width: 100%;
-  height: 20px;
-  z-index: 1;
-  background: #ffde01;
-  transform: skewY(-2deg);
-}
-
 /*About*/
 .about {
   background: rgb(86, 4, 251);
   position: relative;
   padding: 7rem 0 5rem 0;
-}
-
-.about::before {
-  content: "";
-  position: absolute;
-  top: -20px;
-  left: 0;
-  width: 100%;
-  height: 40px;
-  background: rgb(86, 4, 251);
-  transform: skewY(-2deg);
 }
 
 .about-box {
@@ -386,19 +394,20 @@ ul {
 }
 
 .images img {
-  width: 250px;
+  width: 350px;
 }
 
 .images #about1 {
   position: absolute;
-  top: -180px;
+  top: -120px;
+  right: 10px;
   z-index: 1;
 }
 
 .images #about2 {
   position: absolute;
-  top: -20px;
-  left: 30%;
+  top: 90px;
+  left: -40px;
   z-index: 2;
 }
 
@@ -440,15 +449,16 @@ ul {
   font-size: 1rem;
 }
 
-.about::after {
+.about::before {
   content: "";
   position: absolute;
-  bottom: -20px;
+  top: -1px;
   left: 0;
   width: 100%;
-  height: 40px;
-  background: rgb(86, 4, 251);
-  transform: skewY(-2deg);
+  height: 100px;
+  background: #1b252f;
+  /* clip-path: polygon(0 80%, 100% 40%, 100% 80%, 0 100%); */
+  clip-path: polygon(0 0, 100% 0, 100% 20%, 0 60%);
 }
 
 /*Banner*/
@@ -460,6 +470,18 @@ ul {
   background-attachment: fixed;
   padding: 10rem 0;
   text-align: center;
+  position: relative;
+}
+
+.banner::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: rgb(86, 4, 251);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 20%, 0 60%);
 }
 
 .banner p {
@@ -537,12 +559,24 @@ ul {
 
 /*Trainers*/
 .trainers {
-  padding: 5rem 0 5rem 0;
+  padding: 7rem 0 5rem 0;
   background: #1b252f;
+  position: relative;
 }
 
 .trainers .class-box {
   grid-template-columns: repeat(4, 1fr);
+}
+
+.trainers::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: rgb(86, 4, 251);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 20%, 0 60%);
 }
 
 .trainers .text p {
@@ -583,17 +617,26 @@ ul {
 .challenge::before {
   content: "";
   position: absolute;
-  top: -50px;
+  top: -1px;
   left: 0;
   width: 100%;
   height: 80px;
-  background: rgb(86, 4, 251);
-  transform: skewY(-2deg);
+  background: #1b252f;
+  clip-path: polygon(0 0, 100% 0, 100% 20%, 0 60%);
 }
 
 .challenge-box {
   display: grid;
   grid-template-columns: 60% 40%;
+}
+
+#about-challenge {
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  line-height: 1.7;
+  color: #fff;
+  margin: 2rem 0 0 0;
+  width: 60%;
 }
 
 .challenge .head p {
@@ -603,27 +646,31 @@ ul {
 .challenge .head h1 {
   line-height: 1;
 }
+#about-head {
+  letter-spacing: 3px;
+  line-height: 0.91;
+}
 
 .challenge-img {
   position: relative;
 }
 
 .challenge-img img {
-  width: 250px;
+  width: 350px;
   position: absolute;
 }
 
 #c1 {
   top: -50%;
-  left: -30%;
+  left: -10%;
 }
 
 #c2 {
   top: 20%;
-  left: 20%;
+  left: 40%;
 }
 
-.challenge::after {
+/* .challenge::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -633,7 +680,7 @@ ul {
   background: #ffde01;
   transform: skewY(-2deg);
   z-index: 1;
-}
+} */
 
 /*Footer*/
 footer {
@@ -646,12 +693,12 @@ footer {
 footer::before {
   content: "";
   position: absolute;
-  top: 0;
+  top: -1px;
   left: 0;
   width: 100%;
-  height: 40px;
-  background: #1b252f;
-  transform: skewY(-2deg);
+  height: 100px;
+  background: rgb(86, 4, 251);
+  clip-path: polygon(0 0, 100% 0, 100% 20%, 0 60%);
 }
 
 .footer-box {
