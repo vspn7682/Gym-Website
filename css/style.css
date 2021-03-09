@@ -558,17 +558,20 @@ ul {
 }
 
 /*Trainers*/
-.trainers {
+.trainers,
+.about-trainers {
   padding: 7rem 0 5rem 0;
   background: #1b252f;
   position: relative;
 }
 
-.trainers .class-box {
+.trainers .class-box,
+.about-trainers .class-box {
   grid-template-columns: repeat(4, 1fr);
 }
 
-.trainers::before {
+.trainers::before,
+.about-trainers::before {
   content: "";
   position: absolute;
   top: 0;
@@ -579,27 +582,36 @@ ul {
   clip-path: polygon(0% 0%, 100% 0%, 100% 20%, 0 60%);
 }
 
-.trainers .text p {
+.trainers::before {
+  background: #1b252f;
+}
+
+.trainers .text p,
+.about-trainers .text p {
   color: #ffde01;
   font-style: italic;
   margin-top: 0.1rem;
   font-size: 0.8rem;
 }
 
-.trainers .image-frame .text {
+.trainers .image-frame .text,
+.about-trainers .image-frame .text {
   transition: all 0.3s;
 }
 
-.trainers .image-frame:hover .text {
+.trainers .image-frame:hover .text,
+.about-trainers .image-frame:hover .text {
   background: #ffde01;
   color: rgb(86, 4, 251);
 }
 
-.trainers .image-frame:hover .text p {
+.trainers .image-frame:hover .text p,
+.about-trainers .image-frame:hover .text p {
   color: rgb(86, 4, 251);
 }
 
-.trainers .class-box .box {
+.trainers .class-box .box,
+.about-trainers .class-box .box {
   border: none;
 }
 
@@ -911,7 +923,33 @@ form input::placeholder {
 }
 
 /*Media Queries*/
+@media screen and (max-width: 1024px) {
+  #c1 {
+    top: 0;
+  }
+
+  #c2 {
+    display: none;
+  }
+
+  .images #about1 {
+    top: 0;
+  }
+
+  .images #about2 {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 890px) {
+  #c1 {
+    width: 250px;
+  }
+
+  .images #about1 {
+    width: 250px;
+  }
+
   .navbar {
     height: auto;
     padding: 0.5rem;
@@ -987,7 +1025,7 @@ form input::placeholder {
 
 @media screen and (max-width: 525px) {
   .hero h1 {
-    font-size: 3.5rem;
+    font-size: 3rem;
   }
 
   .info-box {
@@ -1062,6 +1100,10 @@ form input::placeholder {
   .card,
   .slider {
     width: 100%;
+  }
+
+  .card {
+    padding: 5rem 1rem;
   }
 
   .trainers .class-box {
